@@ -24,22 +24,22 @@ let app = http.createServer(function (request, response) {
     response.writeHead(200, { 'content-Type': 'text/html;charset=utf-8' });
     console.log(request.url);
 
-    //路由:根据url不同切换页面
-    switch(request.url) {
-        case '/home' :
+    //路由:根据url不同切换显示不同的内容
+    switch (request.url) {
+        case '/home':
             response.end('首页');
             break;
-        case '/list' :
+        case '/list':
             response.end('列表页');
-            break; 
-        case '/cart' :
+            break;
+        case '/cart':
             response.end('购物车页');
-            break;   
-        default :
+            break;
+        default:
             response.end(`你访问的${request.url}不存在`);
             break;
     }
-    
+
 });
 
 
