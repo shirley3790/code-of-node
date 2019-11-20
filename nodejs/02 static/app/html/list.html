@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <h1>列表</h1>
+
+    <script src="../assets/jquery-3.2.1.js"></script>
     <script>
-        let xhr = new XMLHttpRequest();
-        xhr.onload = function(){
-            console.log(JSON.parse(xhr.responseText));
-        }
-        xhr.open('get','http://localhost:3006',true);
-        xhr.send();
+        //获取数据：如果不用服务器代理，是否可以获取到数据？
+        // $.ajax({
+        //     type: 'get',
+        //     url: 'https://m.weibo.cn/api/config/list',//报错：同源策略
+        //     dataType: 'json',
+        //     success: str => {
+        //         console.log(str);
+        //     }
+        // });
+
+        //获取接口
+        $.ajax({
+            type: 'get',
+            url: 'http://localhost:3006',//报错：同源策略
+            success: str => {
+                console.log(str);
+            }
+        });
     </script>
 </body>
+
 </html>
