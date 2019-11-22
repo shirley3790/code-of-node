@@ -13,6 +13,7 @@
     "boostrap": "^2.0.0",
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.17.1",
+    "http-proxy-middleware": "^0.20.0",
     "jquery": "^3.4.1",
     "request": "^2.88.0"
   }

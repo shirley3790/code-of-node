@@ -11,9 +11,10 @@ const http = require('http');
 */
 
 //到微博官网，查找数据接口，记得用network的 xhr模式
-// request('https://m.weibo.cn/api/config/list', (error, response, data) => {
-//     console.log(data);
+// request('https://m.weibo.cn/api/config/list', (error, response, body) => {
+//     console.log(body);
 // });
+
 
 //把请求到的数据传给前端，前端用ajax请求即可。这就是服务器代理
 http.createServer((req, res) => {
@@ -22,12 +23,11 @@ http.createServer((req, res) => {
     */
     res.writeHead(200, {
         'Access-Control-Allow-Origin': '*'
-    }); request
-    request('https://m.weibo.cn/api/config/list', (error, response, data) => {
-        res.end(data);
+    });
+    request
+    request('https://m.weibo.cn/api/config/list', (error, response, body) => {
+        res.end(body);
     });
 }).listen(3006, () => {
     console.log('server is running on http://localhost:3006')
 });
-
-
