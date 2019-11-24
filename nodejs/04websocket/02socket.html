@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>websocket</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let socket = new WebSocket('ws://localhost:1001');
+    // 监听是否连接成功
+    // onopen
+    socket.onopen = e => {
+
+
+        // 发送登录消息给服务器
+
+        socket.send('我是小花，你在吗？');
+    }
+</script>
+
+</html>
