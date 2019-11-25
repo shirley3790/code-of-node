@@ -21,8 +21,8 @@
                 * url.resolve(): 以一种 Web 浏览器解析超链接的方式把一个目标 URL 解析成相对于一个基础 URL
 */
 
-const http = require('http');//创建服务器的模块
-const url = require('url');//获取url，操作url的对象，类似原生里面的location对象
+const http = require('http'); //创建服务器的模块
+const url = require('url'); //获取url，操作url的对象，类似原生里面的location对象
 
 // console.log(http);//打印一下这个模块有什么
 // console.log(url);
@@ -30,10 +30,12 @@ const url = require('url');//获取url，操作url的对象，类似原生里面
 
 let app = http.createServer(function (request, response) {
     //设置响应头:content-Type 告诉浏览器响应内容的类型
-    response.writeHead(200, { 'content-Type': 'text/html;charset=utf-8' });
+    response.writeHead(200, {
+        'content-Type': 'text/html;charset=utf-8'
+    });
     // console.log(request.url);
-    // console.log(url.parse(request.url));
-    let params = url.parse(request.url, true);
+    // console.log(url.parse(request.url)); //前端输入：localhost:2020?name=malin&adr=guangxi
+    let params = url.parse(request.url, true); //得到数据：{name:malin,adr:guangxi}
     console.log(params.query);
     //路由:根据url不同切换显示不同的内容
     response.end('结束');
